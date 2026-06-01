@@ -1,0 +1,6 @@
+◇ injected env (2) from .env // tip: ⌘ enable debugging { debug: true }
+DEBUG: Is Profile a function? true
+DEBUG: What is Profile? Model { Profile }
+🎯 DEBUG: marksRoutes.js file has successfully loaded into memory!
+Server running on port 5001
+MongoDB Connected

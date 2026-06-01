@@ -13,6 +13,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Health check / root route
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'Faculty Flow backend is up and running' });
+});
+
 // Routes Links
 const authRoutes = require("./routes/authRoutes"); 
 const marksRoutes = require("./routes/marksRoutes");
