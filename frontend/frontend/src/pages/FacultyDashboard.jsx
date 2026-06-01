@@ -72,7 +72,7 @@ useEffect(() => {
   const [finalizedRecords, setFinalizedRecords] = useState([]);
 
   // Base configuration API endpoint - UPDATED TO 5001
-  const API_BASE_URL = "http://localhost:5001/api/marks";
+  const API_BASE_URL = "https://faculty-flow-backend.onrender.com/api";
 
   // Dynamic MongoDB Reader Fetch Routine
   const fetchMongoRecords = async () => {

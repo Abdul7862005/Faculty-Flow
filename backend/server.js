@@ -10,7 +10,10 @@ console.log("DEBUG: What is Profile?", Profile);
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://faculty-flow-frontend.onrender.com", // Your live frontend URL
+  credentials: true
+}));
 app.use(express.json());
 
 // Health check / root route
