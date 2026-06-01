@@ -29,7 +29,7 @@ const [showAddBox, setShowAddBox] = useState(false);
 // ---------------------------------
 useEffect(() => {
     if (activeTab === "My Profile") {
-      fetch("http://localhost:5001/api/profile")
+      fetch("http://https://faculty-flow-backend.onrender.com/api/profile")
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
@@ -47,7 +47,7 @@ useEffect(() => {
     const updatedSkills = [...skills, newSkill];
     
     try {
-      const response = await fetch("http://localhost:5001/api/profile/update", {
+      const response = await fetch("http://https://faculty-flow-backend.onrender.com/api/profile/update", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ skills: updatedSkills }),
@@ -72,7 +72,9 @@ useEffect(() => {
   const [finalizedRecords, setFinalizedRecords] = useState([]);
 
   // Base configuration API endpoint - UPDATED TO 5001
-  const API_BASE_URL = "https://faculty-flow-backend.onrender.com/api";
+ const API_BASE_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001/api' 
+  : 'https://faculty-flow-backend.onrender.com/api';
 
   // Dynamic MongoDB Reader Fetch Routine
   const fetchMongoRecords = async () => {
