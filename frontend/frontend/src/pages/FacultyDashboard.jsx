@@ -79,7 +79,7 @@ useEffect(() => {
   // Dynamic MongoDB Reader Fetch Routine
   const fetchMongoRecords = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/all`);
+      const response = await fetch(`${API_BASE_URL}/marks/all`);
       const json = await response.json();
       if (json.success) {
         setFinalizedRecords(json.data);
@@ -175,7 +175,7 @@ useEffect(() => {
     };
 
     try {
-      const response = await fetch(`${API_BASE_URL}/save`, {
+      const response = await fetch(`${API_BASE_URL}/marks/save`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
