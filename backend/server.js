@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://faculty-flow-frontend.onrender.com", // Your live frontend URL
+  origin: ["http://localhost:5173", "https://faculty-flow-frontend.onrender.com"], // Allow both local and production
   credentials: true
 }));
 app.use(express.json());
