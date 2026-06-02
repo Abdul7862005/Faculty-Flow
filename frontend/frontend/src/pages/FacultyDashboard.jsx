@@ -29,7 +29,7 @@ const [showAddBox, setShowAddBox] = useState(false);
 // ---------------------------------
 useEffect(() => {
     if (activeTab === "My Profile") {
-      fetch("http://https://faculty-flow-backend.onrender.com/api/profile")
+      fetch(`${API_BASE_URL}/profile`)
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
@@ -47,7 +47,7 @@ useEffect(() => {
     const updatedSkills = [...skills, newSkill];
     
     try {
-      const response = await fetch("http://https://faculty-flow-backend.onrender.com/api/profile/update", {
+      const response = await fetch(`${API_BASE_URL}/profile/update`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ skills: updatedSkills }),
