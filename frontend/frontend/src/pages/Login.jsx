@@ -18,8 +18,12 @@ function Login() {
     console.log("Attempting login connection to backend for:", roleType);
 
     try {
-      // FIXED: Switched port from 5001 back to 5001 to line up with your active Node process
-      const response = await axios.post("http://localhost:5001/api/auth/login", {
+      // Determine backend URL based on environment
+      const backendURL = window.location.hostname === 'localhost' 
+        ? 'http://localhost:5001' 
+        : 'https://faculty-flow-backend.onrender.com';
+      
+      const response = await axios.post(`${backendURL}/api/auth/login`, {
         email: username,
         password: password,
         role: roleType
